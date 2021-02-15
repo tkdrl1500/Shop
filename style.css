@@ -1,0 +1,110 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --base-space: 8px;
+  --size-button: 60px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
+  --font-size: 18px;
+
+  /* annimation */
+  --annimation-duration: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+  /* box의 크기를 border에 기준으로 똑같이 만든다. */
+}
+
+body {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.buttons {
+  display: flex;
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform var(--annimation-duration) ease;
+  /* transition을 이용해서 transform을 ease란 옵션을 통해 300ms 동안 애니메이션 효과를 줌 */
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+  /* 마우스 올라올 떄 1.1배 커진다 */
+}
+
+.btn {
+  background-color: transparent; /*투명*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--annimation-duration) ease;
+  margin-right: var(--base-space);
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
+}
+
+.items {
+  /* background-color: salmon; 영역을 보기 위해 백그라운드 색을 넣음 */
+  width: 60%;
+  height: 60%;
+  /* 일정한 크기로 있는 것이 중요하기에 width와 height을 고정해주기 보다 60%으로 해서 반응형으로 만들어줌 */
+  list-style: none;
+  padding-left: 0;
+  overflow-y: scroll;
+  /* 스크롤 할수 있게 설정 */
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item_thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+}
+
+.item_description {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
+}
